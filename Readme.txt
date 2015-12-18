@@ -1,16 +1,16 @@
-This is the xelatex compiled pdf for abdulla yusufali's quran translation
+This is the xelatex compiled pdf for Sheikh Muhammed Karakkunnu's quran translation in malayalam
 
-en.yusufali.txt contains the translation [www.zekr.org]
+ml.karakunnu.txt contains the translation [www.zekr.org]
 
 
-gentexforquran.py is to be run to generate the tex file
+genmalquran.py is to be run to generate the tex file
 
 
 atlast
 
-xelatex master.tex 
+xelatex qurantrans.tex 
 
 
-will give master.pdf output
+will give qurantrans.pdf output
 
 

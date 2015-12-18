@@ -1,0 +1,206 @@
+\documentclass{report}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Quran},    % title
+    pdfauthor={Author},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1, key2, key3}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+\usepackage{forloop}
+\usepackage{quran}
+\def\surna[#1]{\centerline{\hss\surahname[#1]\hss\lr{\surahname[#1]}\hss}}
+%%% For accessing system, OTF and TTF fonts
+%%% (would have been loaded by polylossia anyway)
+\usepackage{fontspec}
+
+%%% For language switching -- like babel, but for xelatex
+\usepackage{polyglossia}
+
+%%% For those cool-looking menus and keystrokes
+\usepackage{menukeys}
+
+%%% For the xelatex (and other LaTeX friends) logos
+\usepackage{hologo}
+
+%%% For the awesome fontawesome icons!
+\usepackage{fontawesome}
+
+%\usepackage[hyphens]{url}
+
+
+\setmainlanguage{english}
+\setotherlanguages{arabic,hindi,sanskrit,greek,thai,malayalam} %% or other languages
+
+
+
+%%% You'll probably want these lines if
+%%% you are also using tikz-related packages with
+%%% RTL languages. Put these lines *after* you 
+%%% loaded the RTL languages.
+\makeatletter
+    \let\pgfpicture\origin@pgfpicture%
+    \let\endpgfpicture\origin@endpgfpicture%
+\makeatother
+
+
+% Main serif font for English (Latin alphabet) text
+\setmainfont[Ligatures=TeX]{TeX Gyre Termes}
+\setsansfont{Lato}
+\setmonofont{Inconsolata}
+
+% define fonts for other languages
+\newfontfamily\arabicfont[Script=Arabic]{Scheherazade}
+\newfontfamily\devanagarifont[Script=Devanagari]{Lohit Devanagari}
+\newfontfamily\greekfont[Script=Greek]{GFS Artemisia}
+\newfontfamily\thaifont[Script=Thai]{FreeSerif}
+\newfontfamily\malayalamfont[Script=Malayalam]{AnjaliOldLipi}
+
+
+
+
+\title{Quran Translation in Malayalam}
+\author{Sheik. Muhammed Karakunnu \\ \&\\Vanidas Elayavoor}
+
+\begin{document}
+
+\maketitle
+
+This is a mainly English document which contains other languages. Here we use \texttt{polyglossia} and \texttt{fontspec}. 
+
+You'll need to use \hologo{XeLaTeX} to compile this document. You can configure your Overleaf project to be compiled with \hologo{XeLaTeX} with the following steps:
+
+\begin{enumerate}
+\item Click on the \keys{\faCog} icon, near the upper right corner in your Overleaf editor.
+\item Select \menu{Advanced Build Options > LaTeX engine > XeLaTeX}
+\item Click on \keys{Save project settings}.
+\end{enumerate}
+
+
+
+\section{Arabic}
+Here's some Arabic text:
+
+%% Arabic lorem ipsum text from http://generator.lorem-ipsum.info/_arabic
+%% Note capital "A"rabic
+\begin{Arabic}
+بعد هامش وإقامة المتحدة و, أم السادس وبالرغم فقد. بعد أن صفحة شمال بداية, أسر حصدت تزامناً ما. ٣٠ نقطة المحيط بمحاولة مكن, مع شمال يتبقّ تحت. خلاف أكثر دون من, الأرض أعلنت فرنسية ٣٠ على.
+\end{Arabic}
+
+
+
+\section{Hindi}
+
+Here's some Hindi:
+
+%% Hindi lorem ipsum text from http://generator.lorem-ipsum.info/_hindi
+\begin{hindi}
+जैसी जिम्मे ऎसाजीस दिनांक विवरण जनित बाटते भारतीय विचरविमर्श बढाता विषय वर्णित पुष्टिकर्ता किया बनाने ज्यादा लचकनहि पुर्णता वातावरण व्याख्या संस्क्रुति होभर चिदंश होसके अधिकार उसीएक् बीसबतेबोध अपनि हमेहो। संस्थान उपलब्धता बनाकर करने अपने प्राण समस्याओ बीसबतेबोध उपयोगकर्ता आशाआपस असक्षम बनाति देते बनाने सिद्धांत बीसबतेबोध ढांचामात्रुभाषा कर्य
+\end{hindi}
+
+\section{Sanskrit}
+And here's some Sanskrit:
+
+\begin{sanskrit}
+सर्वे मानवाः स्वतन्त्राः समुत्पन्नाः वर्तन्ते अपि च, गौरवदृशा अधिकारदृशा च समानाः एव वर्तन्ते।
+\end{sanskrit}
+
+
+
+
+\section{Greek}
+Here's some Greek:
+
+%% Lorem ipsum from http://generator.lorem-ipsum.info/_greek
+\begin{greek}
+Οδιο διστα ιμπεδιτ φιμ ει, αδ φελ αβχορρεανθ ελωκυενθιαμ, εξ εσε εξερσι γυβεργρεν ηας. Ατ μει σολετ σριπτορεμ. Ιυς αλια λαβωρε θε. Σιθ κυωτ νυσκυαμ ιρασυνδια αν, ωμνιυμ ελιγενδι ιν πρι. Παρτεμ φερθερεμ συσιπιαντυρ εξ ιυς, ναμ τωλλιτ ιυφαρεθ αδφερσαριυμ εα, πρω πρωπριαε σαεφολα ιδ. Ατ πρι δολορ νυσκυαμ.
+\end{greek}
+
+
+
+\section{Thai}
+Here's some Thai:
+
+%% Lorem ipsum from http://lorem.in.th/
+\begin{thai}
+\XeTeXlinebreaklocale "th"
+\raggedright
+คอรัปชันจุ๊ยโปรดิวเซอร์ สถาปัตย์จ๊าบ แจ็กพ็อต ม้าหินอ่อน ซากุระคันถธุระ ฟีดสตาร์ท งี้ บอยคอตอิ่มแปร้สังโฆคำสาปแฟนซี ศิลปวัฒนธรรมไฟลท์จิ๊กโก๋กับดัก เจลพล็อตมาม่าซากุระดีลเลอร์ ซีนดัมพ์ แฮปปี้ เอ๊าะอุรังคธาตุซิม ฟินิกซ์เทรลเล่อร์อวอร์ด แคนยอนสมาพันธ์ ครัวซองฮัมอาข่าเอ็กซ์เพรส 
+\end{thai}
+\section{Malayalam}
+\begin{center}
+\Huge{
+\begin{Arabic}
+\basmalah
+\end{Arabic}}
+\end{center}
+Here is some malayalam
+\flushright{
+
+\begin{Arabic}
+\quranayah[1][1]
+\end{Arabic}}
+\flushleft{
+\begin{malayalam}
+പരമകാരുണികനും ദയാപരനുമായ അല്ലാഹുവിന്റെ നാമത്തില്‍.
+\end{malayalam}}
+\flushright{
+\begin{Arabic}
+\quranayah[1][2]
+\end{Arabic}}
+\flushleft{
+\begin{malayalam}
+സ്തുതിയൊക്കെയും അല്ലാഹുവിന്നാണ്. അവന്‍ മുഴുലോകരുടെയും പരിപാലകന്‍.
+\end{malayalam}}
+\begin{Arabic}
+\quranayah[1][3]
+\end{Arabic}
+\\\begin{malayalam}
+പരമകാരുണികന്‍. ദയാപരന്‍.
+\end{malayalam}\\
+\begin{Arabic}
+\quranayah[1][4]
+\end{Arabic}
+\\\begin{malayalam}
+വിധിദിനത്തിന്നധിപന്‍.
+\end{malayalam}\\
+\begin{Arabic}
+\quranayah[1][5]
+\end{Arabic}
+\\\begin{malayalam}
+നിനക്കു മാത്രം ഞങ്ങള്‍ വഴിപ്പെടുന്നു. നിന്നോടു മാത്രം ഞങ്ങള്‍ സഹായം തേടുന്നു.
+\end{malayalam}\\
+\begin{Arabic}
+\quranayah[1][6]
+\end{Arabic}
+\\\begin{malayalam}
+ഞങ്ങളെ നീ നേര്‍വഴിയിലാക്കേണമേ.
+\end{malayalam}\\
+\begin{Arabic}
+\quranayah[1][7]
+\end{Arabic}
+\\\begin{malayalam}
+നീ അനുഗ്രഹിച്ചവരുടെ വഴിയില്‍. നിന്റെ കോപത്തിന്നിരയായവരുടെയും പിഴച്ചവരുടെയും വഴിയിലല്ല.
+\end{malayalam}
+\section{How Do I Know What Fonts are Available on Overleaf?}
+
+You can check the list here: \url{https://www.overleaf.com/help/193-what-otf-slash-ttf-fonts-are-supported-via-fontspec}
+
+We're still in the process of updating the list of font names, so if you're in doubt, just send us an email!
+\chapter{\textmalayalam{പരമകാരുണികനും ദയാപരനുമായ അല്ലാഹുവിന്റെ നാമത്തില്‍.}}
+\end{document}
+             
